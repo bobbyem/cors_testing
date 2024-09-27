@@ -1,0 +1,14 @@
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80" # Nginx kommer att servera frontend på port 80
+    depends_on:
+      - backend # frontend väntar på att backend ska vara redo
+
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - "/data/node_modules" # Lägger till volym för persistens av node_modules om det behövs
