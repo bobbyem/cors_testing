@@ -4,7 +4,7 @@ import { useState } from "react";
 function App() {
   const [errorMessage, setErrorMessage] = useState(null);
   const [message, setMessage] = useState(null);
-  const URL = "http://localhost:3000";
+  const URL = "http://backend:3000";
 
   const testFetch = async () => {
     try {
